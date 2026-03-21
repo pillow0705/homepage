@@ -1,0 +1,7 @@
+node_modules/
+.next/
+*.aux
+*.log
+*.out
+*.synctex*
+Bg/

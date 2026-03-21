@@ -1,0 +1,123 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{geometry}
+\geometry{margin=0.75in}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{fontawesome5}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue,pdfborder={0 0 0}]{hyperref}
+
+% Define colors
+\definecolor{burgundy}{rgb}{0.5, 0.0, 0.13}
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
+
+% Section formatting
+\titleformat{\section}{\Large\scshape\bfseries\color{burgundy}\centering}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{6pt}
+
+% Subsection formatting
+\titleformat{\subsection}{\large\bfseries}{}{0em}{}
+\titlespacing{\subsection}{0pt}{6pt}{3pt}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Slightly increase line spacing
+\linespread{1.08}
+
+\begin{document}
+
+% Header
+\begin{center}
+    {\Huge \textbf{Yuanhang Chang(常远航)}} 
+    \par \vspace{0.2cm}
+    \faMapMarker \hspace{0.5em} School of the Gifted Young, University of Science and Technology of China (USTC), Hefei, China \\
+    \faEnvelope \hspace{0.5em} \href{mailto:cyhang@mail.ustc.edu.cn}{cyhang@mail.ustc.edu.cn} $\cdot$
+    \faGithub \hspace{0.5em} \href{https://github.com/pillow0705}{github.com/pillow0705}
+\end{center}
+
+\vspace{0.1cm}
+
+% Education
+\section{Education}
+
+\noindent \textbf{University of Science and Technology of China (USTC)} \hfill Hefei, China \\
+\textit{B.S. Major in \textbf{Mathematics and Applied Mathematics}} \\
+\textit{Minor in \textbf{Computer Science}} \hfill Sep. 2023 -- Present
+\begin{itemize}[noitemsep, topsep=2pt, leftmargin=1.5em]
+    \item \textbf{School:} School of the Gifted Young (elite program for talented youth in China)
+    \item \textbf{GPA:} 3.82 / 4.3  \quad \textbf{Ranking:} Top 15\%
+    \item \textbf{Math GPA:} 3.96 / 4.3 (Weighted Avg: 91.02)  
+    \item \textbf{Mathematical Courses:}
+    \vspace{0.2em}
+    \begin{center}
+    \begin{tabular}{|l|c|l|c|}
+    \hline
+    \textbf{Course} & \textbf{Score} & \textbf{Course} & \textbf{Score} \\
+    \hline
+    Foundations of Geometry & \textbf{85} & Real Analysis & \textbf{92} \\
+    Math Analysis (1) & \textbf{88} & Complex Analysis & \textbf{93} \\
+    Math Analysis (2) & \textbf{85} & Probability & \textbf{91} \\
+    Math Analysis (3) & \textbf{86} & Math Statistics & \textbf{95} \\
+    Linear Algebra (1) & \textbf{92} & Differential Geometry & \textbf{96} \\
+    Linear Algebra (2) & \textbf{92} & Advanced Real Analysis & \textbf{98} \\
+    ODE/PDE & \textbf{98} & Functional Analysis & \textbf{96} \\
+    Algebraic Structure & \textbf{91} & Machine Learning A & \textbf{95} \\
+    Modern Algebra & \textbf{78} & & \\
+    \hline
+    \end{tabular}
+    \end{center}
+    \vspace{-0.5em}
+    \begin{itemize}[label=\small$\cdot$, leftmargin=2.5em, noitemsep, topsep=0pt]
+        \item \textit{Note: \textbf{Advanced Real Analysis} focuses on geometric measure theory, following Evans and Gariepy's ``Measure Theory and Fine Properties of Functions.''}
+    \end{itemize}
+    \vspace{0.2em}
+    \item \textbf{Computer Science Courses:} Algorithms, Deep Learning (and Practice), Stochastic Processes, Data Structures, Computer Networks
+    \item \textbf{English:} CET-4 (570), CET-6 (470), TOEFL (in preparation)
+    \item \textbf{Teaching Assistant:} Complex Analysis B (Instructor: Prof. Santai Qu) \hfill Fall 2025
+\end{itemize}
+
+% Research Interest
+\section{Research Interest}
+
+\noindent \textbf{Research Interests:} Machine learning theory, convex optimization, post-training for large language models, mathematical analysis\\[3pt]
+\textbf{Current Goals:} Seeking \textbf{Summer 2026 research internship} and \textbf{Fall 2027 Ph.D. positions} in machine learning, statistics, or AI
+
+% Research Experience
+\section{Research Experience}
+
+\vspace{6pt}
+
+\noindent \textbf{Xinhe Scholar Program: LLM Post-Training \& RLVR} \hfill USTC \\
+\textit{Research Scholar} (Advisor: Prof. Jie Wang) \hfill Fall 2025 -- Present
+\begin{itemize}[noitemsep, topsep=2pt, leftmargin=1.5em]
+    \item Selected for the elite ``Xinhe Scholar'' program to research large reasoning models and reinforcement learning with verifiable rewards (RLVR)
+    \item Developing hybrid methods combining supervised fine-tuning and reinforcement learning to enhance reasoning capabilities in large language models
+\end{itemize}
+
+\vspace{6pt}
+
+% Honors
+\section{Honors}
+
+\begin{itemize}[noitemsep, topsep=2pt, leftmargin=1.5em]
+    \item \textbf{Bronze Award}, Outstanding Student Scholarship (USTC) \hfill 2025
+    \item \textbf{Rose Forging Scholarship}, USTC \hfill 2025
+    \item \textbf{Second Prize}, Chinese Mathematics Competitions (Anhui Province) \hfill 2024
+    \item \textbf{Bronze Award}, Outstanding Student Scholarship (USTC) \hfill 2024
+    \item \textbf{Outstanding Freshman Scholarship}, USTC \hfill 2023
+\end{itemize}
+
+% Skills
+\section{Skills}
+
+\begin{tabular}{@{}l@{\hspace{1em}}p{0.8\textwidth}@{}}
+\textbf{Languages} & Python (proficient), C/C++, JavaScript/Node.js, \LaTeX, Mathematica, R\\[3pt]
+\textbf{AI / ML} & PyTorch, Transformers, reinforcement learning (PPO/DPO) \\[3pt]
+\textbf{Tools} & Git, Linux/Bash, Docker, SQL, VS Code, Nginx
+\end{tabular}
+
+\end{document}
