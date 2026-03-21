@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
-import { Download, ArrowRight, GraduationCap, Briefcase, Award, Cpu, Newspaper, FileText } from "lucide-react";
+import { Download, ArrowRight, GraduationCap, Briefcase, Award, Cpu, Newspaper, FileText, FolderGit2 } from "lucide-react";
 import { PublicationCard } from "@/components/PublicationCard";
 import Link from "next/link";
 
@@ -140,7 +140,13 @@ export default function Home() {
                         </div>
                         <ul className="list-disc list-outside ml-4 text-slate-600 space-y-1 mt-2 text-sm leading-relaxed">
                             {exp.description.map((desc, i) => (
-                                <li key={i}>{desc}</li>
+                                <li key={i}>
+                                    {desc.split(/(\*\*.*?\*\*)/).map((part, j) =>
+                                        part.startsWith('**') && part.endsWith('**')
+                                            ? <strong key={j} className="font-semibold text-slate-900">{part.slice(2, -2)}</strong>
+                                            : part
+                                    )}
+                                </li>
                             ))}
                         </ul>
                     </div>
@@ -205,6 +211,38 @@ export default function Home() {
                     <div>
                         <h4 className="font-semibold text-slate-900">{award.title}</h4>
                         <p className="text-sm text-slate-500">{award.issuer}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section className="space-y-6">
+        <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+            <div className="flex items-center gap-3">
+                <FolderGit2 className="text-indigo-600" size={28} />
+                <h2 className="text-2xl font-serif font-bold text-slate-900">{profile.labels.projects}</h2>
+            </div>
+            <Link href="/projects" className="group flex items-center gap-1 text-sm font-medium font-sans text-slate-500 hover:text-indigo-600 transition-colors">
+                {profile.labels.viewAll}
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {profile.projects.slice(0, 4).map((project, index) => (
+                <div key={index} className="flex flex-col p-4 rounded-lg bg-slate-50 border border-slate-100 hover:border-indigo-200 hover:bg-indigo-50/30 transition-colors">
+                    <div className="flex items-start justify-between mb-2">
+                        <h4 className="font-semibold text-slate-900 text-sm">{project.title}</h4>
+                        {project.link && (
+                            <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-xs text-slate-400 hover:text-indigo-600 ml-2 shrink-0">↗</a>
+                        )}
+                    </div>
+                    <p className="text-xs text-slate-500 flex-1 leading-relaxed mb-3">{project.description}</p>
+                    <div className="flex flex-wrap gap-1">
+                        {project.tags.slice(0, 3).map((tag, i) => (
+                            <span key={i} className="text-xs px-2 py-0.5 bg-white border border-slate-200 text-slate-600 rounded">{tag}</span>
+                        ))}
                     </div>
                 </div>
             ))}
