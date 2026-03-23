@@ -103,6 +103,8 @@ const profileEn: ProfileData = {
     I am looking for research opportunities that allow me to leverage my mathematical background to explore these fields further. I plan to apply for **Summer Research internships in 2026** and **PhD positions in Fall 2027**.
   `,
   news: [
+    { date: "Mar 2026", content: "Built **notion-homework-tool**, a Claude Code–powered agent that automatically completes and submits homework via Notion every 4 hours." },
+    { date: "Mar 2026", content: "Launched **USTC Web Club**, a full-stack community platform for USTC students to collaborate on web projects." },
     { date: "Dec 2025", content: "Started a Reinforcement Learning training project for a Tank Turmoil game." },
     { date: "Feb 2025", content: "Started leading the research on **PG-VE-MoE** (Pareto-Guided Virtual Expert MoE)." },
     { date: "Fall 2024", content: "Selected for the **Xinhe Scholar** elite research program." },
@@ -199,6 +201,18 @@ const profileEn: ProfileData = {
   ],
   projects: [
     {
+      title: "Notion Homework Automation",
+      description: "Claude Code–powered agent that syncs homework todos from Notion, auto-completes them (LaTeX → PDF via XeLaTeX), and uploads results back every 4 hours — fully unattended.",
+      tags: ["Python", "Claude Code", "Notion API", "LaTeX"],
+      link: "https://github.com/pillow0705/notion-homework-tool",
+    },
+    {
+      title: "USTC Web Club Platform",
+      description: "A full-stack community platform for USTC students to collaborate on web projects, featuring a project pool with voting, activity management, and a contribution leaderboard.",
+      tags: ["Vue3", "Node.js", "SQLite", "Full-Stack"],
+      link: "https://github.com/pillow0705/ustc-web-club",
+    },
+    {
       title: "Neural Network Polynomial Approximation",
       description: "Theoretical and experimental study on uniformly approximating neural networks with polynomial functions, bridging approximation theory and deep learning.",
       tags: ["Python", "Approximation Theory", "Deep Learning", "Research"],
@@ -288,6 +302,8 @@ const profileCn: ProfileData = {
     我希望能够结合扎实的数学背景，在这些领域进行更深入的探索与研究。我计划申请 **2026年的暑期科研实习** 以及 **2027年秋季入学的博士职位**。
   `,
   news: [
+    { date: "2026年3月", content: "构建 **notion-homework-tool**，基于 Claude Code 的智能体，每 4 小时自动完成作业并上传至 Notion，全程无人值守。" },
+    { date: "2026年3月", content: "发起 **科大 Web 俱乐部**，搭建全栈社区平台，供科大同学协作开发 Web 项目。" },
     { date: "2025年12月", content: "启动了一个坦克动荡强化学习训练项目。" },
     { date: "2025年2月", content: "开始主导关于 **PG-VE-MoE** (基于帕累托导向的虚拟专家 MoE) 的研究。" },
     { date: "2024年秋", content: "入选 **新荷学者** 精英科研计划。" },
@@ -383,6 +399,18 @@ const profileCn: ProfileData = {
     }
   ],
   projects: [
+    {
+      title: "Notion 作业自动化工具",
+      description: "基于 Claude Code 的智能体，每 4 小时自动同步 Notion 作业 Todo、完成作业（LaTeX 编译为 PDF）并回传上传，全程无人值守。",
+      tags: ["Python", "Claude Code", "Notion API", "LaTeX"],
+      link: "https://github.com/pillow0705/notion-homework-tool",
+    },
+    {
+      title: "科大 Web 俱乐部平台",
+      description: "为科大学生打造的全栈社区平台，支持项目池投票、活动管理报名与贡献排行榜，限科大邮箱注册。",
+      tags: ["Vue3", "Node.js", "SQLite", "全栈开发"],
+      link: "https://github.com/pillow0705/ustc-web-club",
+    },
     {
       title: "神经网络多项式逼近",
       description: "理论与实验研究：用多项式函数一致逼近神经网络，连接逼近论与深度学习。",
