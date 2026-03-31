@@ -109,7 +109,7 @@ const profileEn: ProfileData = {
     I am looking for research opportunities that allow me to leverage my mathematical background to explore these fields further. I plan to apply for **Summer Research internships in 2026** and **PhD positions in Fall 2027**.
   `,
   news: [
-    { date: "Mar 2026", content: "Released **cvt**, a universal file format converter CLI supporting 30+ format pairs (JSON/YAML/TOML/XML/CSV/Markdown/PDF/DOCX/images), designed for both humans and AI agents." },
+    { date: "Mar 2026", content: "Released **cvt**, a file format converter CLI built for **AI agents** — supports 30+ format pairs, installs in two steps via `agent.md`, no interactive UI." },
     { date: "Mar 2026", content: "Connected **Discord** to **Claude Code**, enabling remote AI agent control and task execution directly from Discord messages." },
     { date: "Mar 2026", content: "Built **notion-homework-tool**, a Claude Code–powered agent that automatically completes and submits homework via Notion every 4 hours." },
     { date: "Mar 2026", content: "Launched **USTC Web Club**, a full-stack community platform for USTC students to collaborate on web projects." },
@@ -211,7 +211,7 @@ const profileEn: ProfileData = {
   projects: [
     {
       title: "cvt — Universal File Format Converter",
-      description: "A fast, extensible CLI tool for converting between 30+ file formats (JSON/YAML/TOML/XML/CSV/Markdown/HTML/PDF/DOCX/images). Designed for both humans and AI agents, with a pluggable backend system and batch conversion support.",
+      description: "A CLI tool built for **AI agents** to convert between 30+ file formats (JSON/YAML/TOML/XML/CSV/Markdown/HTML/PDF/DOCX/images). Agents install it in two steps via `agent.md` and call it directly — no interactive UI, predictable exit codes, pluggable backends.",
       tags: ["Python", "CLI", "AI Agent", "File Conversion"],
       link: "https://github.com/pillow0705/cvt",
     },
@@ -322,7 +322,7 @@ const profileCn: ProfileData = {
     我希望能够结合扎实的数学背景，在这些领域进行更深入的探索与研究。我计划申请 **2026年的暑期科研实习** 以及 **2027年秋季入学的博士职位**。
   `,
   news: [
-    { date: "2026年3月", content: "发布 **cvt**，一款支持 30+ 格式转换的通用文件格式转换 CLI 工具，支持 JSON/YAML/TOML/XML/CSV/Markdown/PDF/DOCX/图片等格式互转，专为人类用户与 AI 智能体设计。" },
+    { date: "2026年3月", content: "发布 **cvt**，专为 **AI 智能体**设计的文件格式转换 CLI，支持 30+ 种格式互转，通过 `agent.md` 两步完成安装，无交互界面。" },
     { date: "2026年3月", content: "将 **Discord** 接入 **Claude Code**，实现通过 Discord 消息远程控制 AI 智能体并执行任务。" },
     { date: "2026年3月", content: "构建 **notion-homework-tool**，基于 Claude Code 的智能体，每 4 小时自动完成作业并上传至 Notion，全程无人值守。" },
     { date: "2026年3月", content: "发起 **科大 Web 俱乐部**，搭建全栈社区平台，供科大同学协作开发 Web 项目。" },
@@ -424,7 +424,7 @@ const profileCn: ProfileData = {
   projects: [
     {
       title: "cvt — 通用文件格式转换工具",
-      description: "快速、可扩展的 CLI 工具，支持 30+ 种格式互转（JSON/YAML/TOML/XML/CSV/Markdown/HTML/PDF/DOCX/图片），专为人类用户与 AI 智能体设计，内置可插拔后端系统与批量转换支持。",
+      description: "专为 **AI 智能体**设计的文件格式转换 CLI，支持 30+ 种格式互转（JSON/YAML/TOML/XML/CSV/Markdown/HTML/PDF/DOCX/图片）。智能体通过 `agent.md` 两步完成安装，无交互界面、退出码语义明确、后端可插拔。",
       tags: ["Python", "CLI", "AI Agent", "文件转换"],
       link: "https://github.com/pillow0705/cvt",
     },
