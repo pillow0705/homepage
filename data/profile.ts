@@ -28,8 +28,9 @@ export interface Education {
   degree: string;
   period: string;
   gpa: string;
+  mathGpa?: string;
   rank?: string;
-  coursework?: { name: string; grade?: string; highlight?: boolean }[];
+  coursework?: { name: string; grade?: string; highlight?: boolean; category?: "math" | "cs" }[];
 }
 
 export interface Experience {
@@ -80,9 +81,14 @@ export interface ProfileData {
         contactMe: string;
         viewAll: string;
         coursework: string;
+        mathCoursework: string;
+        csCoursework: string;
         gpa: string;
+        mathGpa: string;
         rank: string;
         advisedBy: string;
+        course: string;
+        score: string;
     }
 }
 
@@ -103,6 +109,8 @@ const profileEn: ProfileData = {
     I am looking for research opportunities that allow me to leverage my mathematical background to explore these fields further. I plan to apply for **Summer Research internships in 2026** and **PhD positions in Fall 2027**.
   `,
   news: [
+    { date: "Mar 2026", content: "Released **cvt**, a universal file format converter CLI supporting 30+ format pairs (JSON/YAML/TOML/XML/CSV/Markdown/PDF/DOCX/images), designed for both humans and AI agents." },
+    { date: "Mar 2026", content: "Connected **Discord** to **Claude Code**, enabling remote AI agent control and task execution directly from Discord messages." },
     { date: "Mar 2026", content: "Built **notion-homework-tool**, a Claude Code–powered agent that automatically completes and submits homework via Notion every 4 hours." },
     { date: "Mar 2026", content: "Launched **USTC Web Club**, a full-stack community platform for USTC students to collaborate on web projects." },
     { date: "Dec 2025", content: "Started a Reinforcement Learning training project for a Tank Turmoil game." },
@@ -116,31 +124,32 @@ const profileEn: ProfileData = {
       school: "University of Science and Technology of China (USTC)",
       degree: "B.S. in Mathematics and Applied Mathematics (Minor in CS)",
       period: "Sept. 2023 – Present",
-      gpa: "3.75 / 4.3",
-      rank: "20% (School of Gifted Young)",
+      gpa: "3.82 / 4.3",
+      mathGpa: "3.96 / 4.3 (Weighted Avg: 91.02)",
+      rank: "Top 15% (School of Gifted Young)",
       coursework: [
-        { name: "Mathematical Analysis B1", grade: "88/100", highlight: true },
-        { name: "Mathematical Analysis B2", grade: "85/100", highlight: true },
-        { name: "Mathematical Analysis B3", grade: "86/100", highlight: true },
-        { name: "Real Analysis", grade: "92/100", highlight: true },
-        { name: "Complex Analysis", grade: "93/100", highlight: true },
-        { name: "Advanced Real Analysis", grade: "Ongoing", highlight: true },
-        { name: "Functional Analysis", grade: "Ongoing", highlight: true },
-        { name: "Linear Algebra B1", grade: "92/100", highlight: true },
-        { name: "Linear Algebra B2", grade: "92/100", highlight: true },
-        { name: "Algebraic Structures", grade: "91/100", highlight: true },
-        { name: "Introduction to Differential Equations", grade: "98/100", highlight: true },
-        { name: "Differential Geometry", grade: "Ongoing", highlight: true },
-        { name: "Probability Theory", grade: "91/100", highlight: true },
-        { name: "Mathematical Statistics", grade: "Upcoming", highlight: true },
-        { name: "Mechanics A", grade: "93/100", highlight: true },
-        { name: "Atomic Physics B", grade: "92/100", highlight: true },
-        { name: "Computer Programming B", grade: "87/100", highlight: true },
-        { name: "Data Structures & Algorithms", highlight: true },
-        { name: "Machine Learning A", grade: "Upcoming", highlight: true },
-        { name: "Deep Learning Practice", grade: "Upcoming", highlight: true },
-        { name: "Artificial Intelligence Practice", grade: "Upcoming", highlight: true },
-        { name: "Software Engineering Practice", highlight: true }
+        { name: "Foundations of Geometry", grade: "85", category: "math" },
+        { name: "Mathematical Analysis B1", grade: "88", category: "math" },
+        { name: "Mathematical Analysis B2", grade: "85", category: "math" },
+        { name: "Mathematical Analysis B3", grade: "86", category: "math" },
+        { name: "Linear Algebra B1", grade: "92", category: "math" },
+        { name: "Linear Algebra B2", grade: "92", category: "math" },
+        { name: "ODE / PDE", grade: "98", category: "math" },
+        { name: "Algebraic Structures", grade: "91", category: "math" },
+        { name: "Modern Algebra", grade: "78", category: "math" },
+        { name: "Real Analysis", grade: "92", category: "math" },
+        { name: "Complex Analysis", grade: "93", category: "math" },
+        { name: "Probability Theory", grade: "91", category: "math" },
+        { name: "Mathematical Statistics", grade: "95", category: "math" },
+        { name: "Differential Geometry", grade: "96", category: "math" },
+        { name: "Advanced Real Analysis", grade: "98", category: "math" },
+        { name: "Functional Analysis", grade: "96", category: "math" },
+        { name: "Machine Learning A", grade: "95", category: "math" },
+        { name: "Computer Programming B", grade: "87", category: "cs" },
+        { name: "Data Structures & Algorithms", category: "cs" },
+        { name: "Deep Learning (Practice)", category: "cs" },
+        { name: "Stochastic Processes", category: "cs" },
+        { name: "Computer Networks", category: "cs" },
       ]
     }
   ],
@@ -200,6 +209,12 @@ const profileEn: ProfileData = {
     }
   ],
   projects: [
+    {
+      title: "cvt — Universal File Format Converter",
+      description: "A fast, extensible CLI tool for converting between 30+ file formats (JSON/YAML/TOML/XML/CSV/Markdown/HTML/PDF/DOCX/images). Designed for both humans and AI agents, with a pluggable backend system and batch conversion support.",
+      tags: ["Python", "CLI", "AI Agent", "File Conversion"],
+      link: "https://github.com/pillow0705/cvt",
+    },
     {
       title: "Notion Homework Automation",
       description: "Claude Code–powered agent that syncs homework todos from Notion, auto-completes them (LaTeX → PDF via XeLaTeX), and uploads results back every 4 hours — fully unattended.",
@@ -279,9 +294,14 @@ const profileEn: ProfileData = {
       contactMe: "Contact Me",
       viewAll: "View All",
       coursework: "Key Coursework",
+      mathCoursework: "Math Courses",
+      csCoursework: "CS Courses",
       gpa: "GPA",
+      mathGpa: "Math GPA",
       rank: "Rank",
-      advisedBy: "Advised by"
+      advisedBy: "Advised by",
+      course: "Course",
+      score: "Score"
   }
 };
 
@@ -302,6 +322,8 @@ const profileCn: ProfileData = {
     我希望能够结合扎实的数学背景，在这些领域进行更深入的探索与研究。我计划申请 **2026年的暑期科研实习** 以及 **2027年秋季入学的博士职位**。
   `,
   news: [
+    { date: "2026年3月", content: "发布 **cvt**，一款支持 30+ 格式转换的通用文件格式转换 CLI 工具，支持 JSON/YAML/TOML/XML/CSV/Markdown/PDF/DOCX/图片等格式互转，专为人类用户与 AI 智能体设计。" },
+    { date: "2026年3月", content: "将 **Discord** 接入 **Claude Code**，实现通过 Discord 消息远程控制 AI 智能体并执行任务。" },
     { date: "2026年3月", content: "构建 **notion-homework-tool**，基于 Claude Code 的智能体，每 4 小时自动完成作业并上传至 Notion，全程无人值守。" },
     { date: "2026年3月", content: "发起 **科大 Web 俱乐部**，搭建全栈社区平台，供科大同学协作开发 Web 项目。" },
     { date: "2025年12月", content: "启动了一个坦克动荡强化学习训练项目。" },
@@ -315,31 +337,32 @@ const profileCn: ProfileData = {
       school: "中国科学技术大学 (USTC)",
       degree: "理学学士，数学与应用数学专业（辅修计算机科学）",
       period: "2023年9月 – 至今",
-      gpa: "3.75 / 4.3",
-      rank: "20% (少年班学院)",
+      gpa: "3.82 / 4.3",
+      mathGpa: "3.96 / 4.3（加权平均分：91.02）",
+      rank: "前15%（少年班学院）",
       coursework: [
-        { name: "数学分析 B1", grade: "88/100", highlight: true },
-        { name: "数学分析 B2", grade: "85/100", highlight: true },
-        { name: "数学分析 B3", grade: "86/100", highlight: true },
-        { name: "实分析", grade: "92/100", highlight: true },
-        { name: "复分析", grade: "93/100", highlight: true },
-        { name: "高等实分析", grade: "在修", highlight: true },
-        { name: "泛函分析", grade: "在修", highlight: true },
-        { name: "线性代数 B1", grade: "92/100", highlight: true },
-        { name: "线性代数 B2", grade: "92/100", highlight: true },
-        { name: "代数结构", grade: "91/100", highlight: true },
-        { name: "微分方程引论", grade: "98/100", highlight: true },
-        { name: "微分几何", grade: "在修", highlight: true },
-        { name: "概率论", grade: "91/100", highlight: true },
-        { name: "数理统计", grade: "即将修读", highlight: true },
-        { name: "力学 A", grade: "93/100", highlight: true },
-        { name: "原子物理 B", grade: "92/100", highlight: true },
-        { name: "计算机程序设计 B", grade: "87/100", highlight: true },
-        { name: "数据结构与算法", highlight: true },
-        { name: "机器学习 A", grade: "即将修读", highlight: true },
-        { name: "深度学习实践", grade: "即将修读", highlight: true },
-        { name: "人工智能实践", grade: "即将修读", highlight: true },
-        { name: "软件工程实践", highlight: true }
+        { name: "几何基础", grade: "85", category: "math" },
+        { name: "数学分析 B1", grade: "88", category: "math" },
+        { name: "数学分析 B2", grade: "85", category: "math" },
+        { name: "数学分析 B3", grade: "86", category: "math" },
+        { name: "线性代数 B1", grade: "92", category: "math" },
+        { name: "线性代数 B2", grade: "92", category: "math" },
+        { name: "微分方程引论", grade: "98", category: "math" },
+        { name: "代数结构", grade: "91", category: "math" },
+        { name: "近世代数", grade: "78", category: "math" },
+        { name: "实分析", grade: "92", category: "math" },
+        { name: "复分析", grade: "93", category: "math" },
+        { name: "概率论", grade: "91", category: "math" },
+        { name: "数理统计", grade: "95", category: "math" },
+        { name: "微分几何", grade: "96", category: "math" },
+        { name: "高等实分析", grade: "98", category: "math" },
+        { name: "泛函分析", grade: "96", category: "math" },
+        { name: "机器学习 A", grade: "95", category: "math" },
+        { name: "计算机程序设计 B", grade: "87", category: "cs" },
+        { name: "数据结构与算法", category: "cs" },
+        { name: "深度学习（实践）", category: "cs" },
+        { name: "随机过程", category: "cs" },
+        { name: "计算机网络", category: "cs" },
       ]
     }
   ],
@@ -399,6 +422,12 @@ const profileCn: ProfileData = {
     }
   ],
   projects: [
+    {
+      title: "cvt — 通用文件格式转换工具",
+      description: "快速、可扩展的 CLI 工具，支持 30+ 种格式互转（JSON/YAML/TOML/XML/CSV/Markdown/HTML/PDF/DOCX/图片），专为人类用户与 AI 智能体设计，内置可插拔后端系统与批量转换支持。",
+      tags: ["Python", "CLI", "AI Agent", "文件转换"],
+      link: "https://github.com/pillow0705/cvt",
+    },
     {
       title: "Notion 作业自动化工具",
       description: "基于 Claude Code 的智能体，每 4 小时自动同步 Notion 作业 Todo、完成作业（LaTeX 编译为 PDF）并回传上传，全程无人值守。",
@@ -478,9 +507,14 @@ const profileCn: ProfileData = {
       contactMe: "联系我",
       viewAll: "查看全部",
       coursework: "核心课程",
+      mathCoursework: "数学课程",
+      csCoursework: "计算机课程",
       gpa: "GPA",
+      mathGpa: "数学 GPA",
       rank: "排名",
-      advisedBy: "导师"
+      advisedBy: "导师",
+      course: "课程",
+      score: "成绩"
   }
 };
 
